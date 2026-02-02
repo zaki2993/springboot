@@ -5,19 +5,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import com.example.demo.repositories.UserRepository;
+import com.example.demo.services.UserService;
 
 @SpringBootApplication
 public class DemoApplication {
 
 	public static void main(String[] args) {
 	ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
-  var repository = context.getBean(UserRepository.class);
-	var user = User.builder()
-			.name("zaka")
-			.email("email")
-			.password("password")
-			.build();
-	repository.save(user);
+  var service = context.getBean(UserService.class);
+  service.showEntityState();
 	}
 
 }
