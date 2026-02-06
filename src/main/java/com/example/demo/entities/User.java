@@ -47,17 +47,6 @@ public class User {
   @Builder.Default
   private List<Address> addresses = new ArrayList(); 
 
-  @ManyToMany
-  @JoinTable(
-  name = "user_tags",
-  joinColumns = @JoinColumn(name = "user_id"),
-  inverseJoinColumns = @JoinColumn(name = "tag_id")
-  )
-  @Builder.Default
-  private Set<Tag> tags = new HashSet<>();
-
-
-  
   public void addAddress(Address address){
     addresses.add(address);
     address.setUser(this);
@@ -67,10 +56,6 @@ public class User {
     address.setUser(null);
   }
 
-  public void addTag(Tag tag){
-    tags.add(tag);
-    tag.getUsers().add(this);
-  }
   public void addProfile(Profile profile){
     this.profile = profile;
     profile.setUser(this);
