@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,13 @@ public class UsersController {
     return  userRepository.findAll();
   }
   @GetMapping("{id}")
-  public User getUser(@PathVariable Long id){
-    return userRepository.findById(id).orElse(null);
+  public ResponseEntity<User> getUser(@PathVariable Long id){
+    var status = userRepository.findById(id).orElse(null);
+    if(status == null){
+      return ResponseEntity.notFound().build();
+    }
+    else{
+      return ResponseEntity.ok(status);
+    }
   }
 }
