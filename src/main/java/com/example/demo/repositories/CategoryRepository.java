@@ -4,5 +4,4 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.entities.Category;
 
-public interface CategoryRepository extends CrudRepository<Category,Long> {
-}
+public interface CategoryRepository extends CrudRepository<Category,Long> {}
