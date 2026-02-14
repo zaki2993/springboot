@@ -12,8 +12,9 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 	ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
-  var service = context.getBean(UserService.class);
-  service.showEntityState();
+  var rep = context.getBean(UserRepository.class);
+  // rep.findAll().forEach(u -> System.out.println(u.getEmail()));
+  rep.deleteById(1L);
 	}
 
 }
