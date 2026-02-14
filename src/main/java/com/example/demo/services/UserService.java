@@ -17,9 +17,9 @@ public class UserService {
   private final EntityManager entityManager;
   public void showEntityState(){
     User user = User.builder()
-      .name("test")
-      .email("test")
-      .password("test")
+      .name("tt")
+      .email("tt")
+      .password("tt")
       .build();
     if (entityManager.contains(user)) {
       System.out.println("is presiste");
