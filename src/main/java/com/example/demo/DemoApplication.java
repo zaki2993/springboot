@@ -13,7 +13,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 	ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
   var service = context.getBean(UserService.class);
-  service.showRolatedEntities();
+  service.showAddress();
 	}
 
 }

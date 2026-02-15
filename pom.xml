@@ -74,6 +74,16 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+      <plugin>
+    <groupId>org.flywaydb</groupId>
+    <artifactId>flyway-maven-plugin</artifactId>
+    <version>11.7.2</version>
+    <configuration>
+        <url>jdbc:postgresql://localhost:5432/store</url>
+        <user>zaki</user>
+        <password>zaki</password>
+    </configuration>
+</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
